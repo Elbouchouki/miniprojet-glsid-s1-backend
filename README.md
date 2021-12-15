@@ -5,23 +5,23 @@
 - Migrate : 
   
  ```zsh
-Elbouchouki:~$ sequelize db:migrate
+Elbouchouki@pc:~$ sequelize db:migrate
 ```
 
 - Cancel all migrations : 
   
 ```zsh
-Elbouchouki:~$ sequelize db:migrate:undo:all
+Elbouchouki@pc:~$ sequelize db:migrate:undo:all
 ```
 
 - Run developpement server : 
   
  ```zsh
-Elbouchouki:~$ npm run dev
+Elbouchouki@pc:~$ npm run dev
 ```
 
 - Lunch all seeders : 
 
  ```zsh
-Elbouchouki:~$ sequelize db:seed:all
+Elbouchouki@pc:~$ sequelize db:seed:all
 ```
