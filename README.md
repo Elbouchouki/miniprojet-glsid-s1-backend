@@ -1,27 +1,37 @@
-# # MiniProjet - Vaccination - Backend(Serveur) # #
+# MiniProjet - Vaccination - Backend(Serveur) #
 
-# commands #
+
+- Clone project : 
+  
+ ```bash
+Elbouchouki:~$ git clone https://github.com/glsidVaccination/backend.git
+```
+- Install dependencies : 
+  
+ ```bash
+Elbouchouki:~$ npm install
+```
 
 - Migrate : 
   
- ```console
+ ```bash
 Elbouchouki:~$ sequelize db:migrate
 ```
 
 - Cancel all migrations : 
   
-```console
+```bash
 Elbouchouki:~$ sequelize db:migrate:undo:all
 ```
 
 - Run developpement server : 
   
- ```console
+ ```bash
 Elbouchouki:~$ npm run dev
 ```
 
 - Lunch all seeders : 
 
- ```console
+ ```bash
 Elbouchouki:~$ sequelize db:seed:all
 ```
