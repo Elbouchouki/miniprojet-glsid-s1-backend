@@ -3,35 +3,35 @@
 
 - Clone project : 
   
- ```bash
+ ```console
 Elbouchouki:~$ git clone https://github.com/glsidVaccination/backend.git
 ```
 - Install dependencies : 
   
- ```bash
+ ```console
 Elbouchouki:~$ npm install
 ```
 
 - Migrate : 
   
- ```bash
+ ```console
 Elbouchouki:~$ sequelize db:migrate
 ```
 
 - Cancel all migrations : 
   
-```bash
+```console
 Elbouchouki:~$ sequelize db:migrate:undo:all
 ```
 
 - Run developpement server : 
   
- ```bash
+ ```console
 Elbouchouki:~$ npm run dev
 ```
 
 - Lunch all seeders : 
 
- ```bash
+ ```console
 Elbouchouki:~$ sequelize db:seed:all
 ```
