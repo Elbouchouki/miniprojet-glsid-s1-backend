@@ -3,6 +3,7 @@ const rolePermissionController = require("../controllers/rolePermission.controll
 const router = express.Router();
 
 router.get("/", rolePermissionController.index);
+router.get("/roles/:role_id", rolePermissionController.getPermissionsById);
 router.get("/roles", rolePermissionController.role);
 router.get("/permissions", rolePermissionController.permission);
 
@@ -16,8 +17,5 @@ router.delete("/permissions", rolePermissionController.deletePermission);
 
 router.put("/roles", rolePermissionController.updateRole);
 router.put("/permissions", rolePermissionController.updatePermission);
-
-// router.post("/", rolePermissionController.index);
-// router.put("/", rolePermissionController.index);
 
 module.exports = router;

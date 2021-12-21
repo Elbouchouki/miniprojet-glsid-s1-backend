@@ -33,6 +33,27 @@ module.exports = {
       });
     }
   },
+  async getPermissionsById(req, res) {
+    try {
+      const role_id = req.params.role_id;
+      const permissions = await models.Role.findAll({
+        where: {
+          id: { [Op.eq]: role_id },
+        },
+        include: {
+          model: models.Permission,
+          as: "perms",
+        },
+      });
+      res.status(200).json({
+        permissions: permissions[0].perms,
+      });
+    } catch (error) {
+      res.status(500).json({
+        message: "error",
+      });
+    }
+  },
   async deleteRolePermission(req, res) {
     try {
       const role_id = req.body.role_id;
@@ -175,5 +196,4 @@ module.exports = {
       });
     }
   },
-  
 };
