@@ -21,7 +21,7 @@ const rolePermissionRoute = require("./routes/rolePermission.js");
 app.use("/", apiRoute);
 
 // routes
-app.use("/infirmier", authRoute);
+app.use("/infirmier", infirmierRoute);
 app.use("/medecin", authRoute);
 app.use("/patient", authRoute);
 app.use("/reservation", authRoute);
@@ -31,8 +31,8 @@ app.use("/ville", authRoute);
 // auth and perms
 app.use(
   "/role_permission",
-  checkAuth,
-  checkRole([ROLE.ADMIN]),
+  // checkAuth,
+  // checkRole([ROLE.ADMIN]),
   rolePermissionRoute
 );
 app.use("/auth", authRoute);

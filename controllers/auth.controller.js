@@ -49,9 +49,6 @@ module.exports = {
   async getUser(req, res) {
     try {
       const username = req.user.username;
-      console.log(username);
-      console.log(req);
-      console.log("---------------");
       const user = await models.User.findOne({
         where: {
           username: { [Op.eq]: username },
