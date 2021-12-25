@@ -31,7 +31,7 @@ module.exports = {
           message: "Infirmier already exists",
         });
       }
-      await models.User.create({
+      await models.Infirmier.create({
         idInfirmier: idInfirmier,
         nom: nom,
         prenom: prenom,
@@ -40,6 +40,8 @@ module.exports = {
         medecinId: medecinId,
         centreId: centreId,
         userId: userId,
+        createdAt: Sequelize.fn("now"),
+        updatedAt: Sequelize.fn("now"),
       });
       res.status(200).json({ result: "Infirmier created" });
     } catch {
@@ -77,6 +79,7 @@ module.exports = {
           medecinId: medecinId,
           centreId: centreId,
           userId: userId,
+          updatedAt: Sequelize.fn("now"),
         },
         {
           where: { idInfirmier: { [Op.eq]: idInfirmier } },

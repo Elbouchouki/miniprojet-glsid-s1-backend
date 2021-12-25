@@ -45,8 +45,13 @@ module.exports = {
           as: "perms",
         },
       });
+      if (permissions?.perms == undefined) {
+        res.status(200).json({
+          permissions: [],
+        });
+      }
       res.status(200).json({
-        permissions: permissions[0].perms,
+        permissions: permissions[0]?.perms,
       });
     } catch (error) {
       res.status(500).json({

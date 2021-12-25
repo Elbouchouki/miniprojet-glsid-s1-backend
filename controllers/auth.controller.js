@@ -23,20 +23,23 @@ module.exports = {
           username: { [Op.eq]: username },
           password: { [Op.eq]: password },
         },
-        include: { all: true, nested: true },
+        include: [
+          {
+            model: models.Role,
+            nested: true,
+          },
+        ],
       });
       if (user) {
         const token = generateAcessToken(username, user.Role?.role_name);
         res.status(200).json({
           user: {
             username: user.username,
-            cin: user.cin,
-            nom: user.nom,
-            prenom: user.prenom,
-            phone: user.phone,
-            mail: user.mail,
-            role: user.Role?.role_name,
-            permissions: user.Role?.perms,
+            email: user.email,
+            role: {
+              id: user.Role?.id,
+              name: user.Role?.role_name,
+            },
           },
           token,
         });
@@ -53,19 +56,22 @@ module.exports = {
         where: {
           username: { [Op.eq]: username },
         },
-        include: { all: true, nested: true },
+        include: [
+          {
+            model: models.Role,
+            nested: true,
+          },
+        ],
       });
       if (user) {
         res.status(200).json({
           user: {
             username: user.username,
-            cin: user.cin,
-            nom: user.nom,
-            prenom: user.prenom,
-            phone: user.phone,
-            mail: user.mail,
-            role: user.Role?.role_name,
-            permissions: user.Role?.perms,
+            email: user.email,
+            role: {
+              id: user.Role?.id,
+              name: user.Role?.role_name,
+            },
           },
         });
       }

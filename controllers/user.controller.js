@@ -5,7 +5,12 @@ module.exports = {
   async index(req, res) {
     try {
       const users = await models.User.findAll({
-        include: { all: true, nested: true },
+        include: [
+          {
+            model: models.Role,
+            nested: true,
+          },
+        ],
       });
       res.status(200).json({
         users: users,
@@ -108,7 +113,7 @@ module.exports = {
         return;
       }
       const checkEmail = await models.User.findOne({
-        where: { mail: { [Op.eq]: mail }, username: { [Op.ne]: username } },
+        where: { email: { [Op.eq]: email }, username: { [Op.ne]: username } },
       });
       if (checkEmail) {
         res.status(409).json({
