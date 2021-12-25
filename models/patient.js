@@ -28,8 +28,8 @@ module.exports = (sequelize, DataTypes) => {
       telephone: DataTypes.STRING,
       dateNaissance: DataTypes.DATEONLY,
       malade: DataTypes.BOOLEAN,
-      infirmierId: DataTypes.INTEGER,
-      medecinId: DataTypes.INTEGER,
+      infirmierId: DataTypes.STRING,
+      medecinId: DataTypes.STRING,
       userId: DataTypes.INTEGER,
     },
     {

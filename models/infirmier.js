@@ -17,12 +17,12 @@ module.exports = (sequelize, DataTypes) => {
   }
   Infirmier.init(
     {
-      idInfirmier: DataTypes.INTEGER,
+      idInfirmier: DataTypes.STRING,
       nom: DataTypes.STRING,
       prenom: DataTypes.STRING,
       telephone: DataTypes.STRING,
       adresse: DataTypes.STRING,
-      medecinId: DataTypes.INTEGER,
+      medecinId: DataTypes.STRING,
       centreId: DataTypes.INTEGER,
       userId: DataTypes.INTEGER,
     },
