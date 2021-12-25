@@ -9,10 +9,12 @@ const { checkAuth, checkRole } = require("./middleware/check-auth");
 const { ROLE } = require("./helper/role");
 // routes imporations
 const apiRoute = require("./routes/api");
+const userRoute = require("./routes/user");
 const patientRoute = require("./routes/patient");
 const medecinRoute = require("./routes/medecin");
 const infirmierRoute = require("./routes/infirmier");
 const reservationRoute = require("./routes/reservation");
+const villeRoute = require("./routes/ville");
 
 // auth and perms routes imporations
 const authRoute = require("./routes/auth");
@@ -21,12 +23,13 @@ const rolePermissionRoute = require("./routes/rolePermission.js");
 app.use("/", apiRoute);
 
 // routes
+app.use("/user", userRoute);
 app.use("/infirmier", infirmierRoute);
-app.use("/medecin", authRoute);
-app.use("/patient", authRoute);
-app.use("/reservation", authRoute);
+app.use("/medecin", medecinRoute);
+app.use("/patient", patientRoute);
+app.use("/reservation", reservationRoute);
 app.use("/parametrage", authRoute);
-app.use("/ville", authRoute);
+app.use("/ville", villeRoute);
 
 // auth and perms
 app.use(
