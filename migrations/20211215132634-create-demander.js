@@ -18,17 +18,19 @@ module.exports = {
         type: Sequelize.INTEGER,
       },
       patientId: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
       },
       centreId: {
         type: Sequelize.INTEGER,
       },
       createdAt: {
         allowNull: false,
+        defaultValue: Sequelize.fn("now"),
         type: Sequelize.DATE,
       },
       updatedAt: {
         allowNull: false,
+        defaultValue: Sequelize.fn("now"),
         type: Sequelize.DATE,
       },
     });

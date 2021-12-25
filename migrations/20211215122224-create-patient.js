@@ -26,20 +26,22 @@ module.exports = {
         type: Sequelize.BOOLEAN,
       },
       infirmierId: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
       },
       medecinId: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
       },
       userId: {
         type: Sequelize.INTEGER,
       },
       createdAt: {
         allowNull: false,
+        defaultValue: Sequelize.fn("now"),
         type: Sequelize.DATE,
       },
       updatedAt: {
         allowNull: false,
+        defaultValue: Sequelize.fn("now"),
         type: Sequelize.DATE,
       },
     });
