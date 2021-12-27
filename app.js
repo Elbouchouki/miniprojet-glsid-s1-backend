@@ -15,6 +15,7 @@ const medecinRoute = require("./routes/medecin");
 const infirmierRoute = require("./routes/infirmier");
 const reservationRoute = require("./routes/reservation");
 const villeRoute = require("./routes/ville");
+const vaccinRoute = require("./routes/vaccin");
 
 // auth and perms routes imporations
 const authRoute = require("./routes/auth");
@@ -30,6 +31,7 @@ app.use("/patient", patientRoute);
 app.use("/reservation", reservationRoute);
 app.use("/parametrage", authRoute);
 app.use("/ville", villeRoute);
+app.use("/vaccin", vaccinRoute);
 
 // auth and perms
 app.use(
