@@ -19,7 +19,9 @@ module.exports = (sequelize, DataTypes) => {
   Vaccin.init(
     {
       nom: DataTypes.STRING,
-      nbrDoses: DataTypes.INTEGER,
+      nbrDose: DataTypes.INTEGER,
+      ageLimit: DataTypes.INTEGER,
+      primarySerie: DataTypes.INTEGER,
     },
     {
       sequelize,
