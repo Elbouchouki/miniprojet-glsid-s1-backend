@@ -11,7 +11,13 @@ module.exports = {
       nom: {
         type: Sequelize.STRING,
       },
-      nbrDoses: {
+      nbrDose: {
+        type: Sequelize.INTEGER,
+      },
+      ageLimit: {
+        type: Sequelize.INTEGER,
+      },
+      primarySerie: {
         type: Sequelize.INTEGER,
       },
       createdAt: {
