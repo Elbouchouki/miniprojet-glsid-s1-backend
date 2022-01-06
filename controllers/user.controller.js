@@ -74,7 +74,7 @@ module.exports = {
         role: role,
       });
       res.status(201).json({
-        result: "user created",
+        result: user,
       });
     } catch (error) {
       res.status(500).json({
